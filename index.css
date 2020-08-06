@@ -1,7 +1,7 @@
 body,html {
     padding:0px;
     margin:0px;
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Ubuntu', cursive;
     font-weight:bold;
     color:#fff;
     background:rgb(0, 0, 0);
@@ -73,7 +73,7 @@ body,html {
 #middle {
     width:100%;
     height:80vh;
-    background:linear-gradient(0deg,rgba(0,0,0,1),rgba(0,0,0,0)),url("https://images.unsplash.com/photo-1494587351196-bbf5f29cff42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&&w=1351&q=80") center center fixed;
+    background:linear-gradient(0deg,rgba(0,0,0,1),rgba(0,0,0,0)),url("53083.jpg") center center fixed;
     background-size:100% auto;
     background-repeat:no-repeat;
     color:white;
