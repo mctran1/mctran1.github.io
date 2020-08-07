@@ -29,7 +29,9 @@
     <div id="middle">
         <div id="tagline" class="animated zoomIn" style="animation-delay:1.8s;">
             Biomedical Engineer<br>
-            <button class="btn_one">Projects</button>
+            <a href="https://acs656.wordpress.com/category/minhs-projects/">
+                <button class="btn_one">Projects</button>
+            </a>
         </div>
     </div>
     </center>
@@ -39,13 +41,13 @@
                  <h1>skills.</h1>
                  <div>
                         <p>
-                            R&D in Medical devices
+                            R&D in Medical devices (ISO 13485)
                         </p>
                         <p>
                             Software developer (IEC 62304)
                         </p>
                         <p>
-                            Embedded engineer
+                            Embedded engineer (system on chip)
                         </p>
                         <p>
                             Medical device regulations (FDA and CE mark)
@@ -74,11 +76,13 @@
 
               <div id="contact">
                  <h1>contact.</h1>
-                 <form>
-                     <input type="text" placeholder="name" required>
-                     <input type="email" placeholder="email" required><br>
-                     <textarea placeholder="your message" required rows="5"></textarea><br>
-                     <button class="btn_one">send</button>
+                 <form action="contactform.php" method = "post">
+                     <input name ="name" type="text" placeholder="name" required>
+                     <input name ="email" type="email" placeholder="email" required><br>
+                     <textarea name ="message" placeholder="your message" required rows="5"></textarea><br>
+ 
+                        <button type="submit" name="submit" class="btn_one">SEND</button>
+
                  </form>
                  <div id="details">
                     <a class="btn_social"><i class="fas fa-phone"></i></a>
