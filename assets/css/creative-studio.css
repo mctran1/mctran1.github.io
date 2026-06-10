@@ -11537,6 +11537,46 @@ pre {
   background: #f8f9fa;
 }
 
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.85rem;
+  color: #cfe9ff;
+  margin-bottom: 1rem;
+}
+
+.focus-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.focus-chip {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+.focus-chip:hover,
+.focus-chip.active {
+  background: #fff;
+  color: #0a2b52;
+  transform: translateY(-1px);
+}
+
+.focus-panel {
+  max-width: 760px;
+  margin: 0 auto;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+}
+
 pre code,
 pre .code {
   color: #6c757d;
