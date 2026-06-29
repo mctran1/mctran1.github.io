@@ -7,747 +7,1807 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-39K0N8VZB0');
 </script>
 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Minh Tran, BEng (Hons), DPhil (Oxon) — Oxford research group advancing digital medicine, AI, and translational engineering for noncommunicable diseases.">
+<meta name="author" content="Minh Tran">
+<title>Minh Tran | DPhil (Oxon) · Innovation for Noncommunicable Diseases</title>
 
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Minh Tran, BEng (Hons), DPhil (Oxon) — Oxford-based research group advancing innovation for noncommunicable diseases through digital medicine, AI, and translational clinical research.">
-    <meta name="author" content="Minh Tran">
-    <title>Minh Tran | Innovation for Noncommunicable Diseases</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- font icons -->
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+<style>
+/* ── Reset & Base ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <!-- Bootstrap + Creative Studio main styles -->
-	<link rel="stylesheet" href="assets/css/creative-studio.css">
+:root {
+  --oxford:   #002147;
+  --oxford-80:#1a3a5c;
+  --gold:     #C9A84C;
+  --gold-light:#e8c96a;
+  --slate:    #475569;
+  --slate-light:#94a3b8;
+  --bg:       #FAFAF8;
+  --bg-2:     #F3F2EF;
+  --text:     #1a1a1a;
+  --text-2:   #4a4a4a;
+  --border:   #E2E0DA;
+  --radius:   4px;
+  --section-gap: 120px;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'Inter', system-ui, sans-serif;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { border: none; background: none; cursor: pointer; font-family: inherit; }
+
+.container {
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Typography ───────────────────────────────────────────────── */
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 600;
+  color: var(--oxford);
+  line-height: 1.2;
+  margin-top: 0.5rem;
+}
+
+.section-title span { color: var(--gold); }
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--slate);
+  max-width: 560px;
+  margin-top: 1rem;
+  line-height: 1.7;
+}
+
+/* ── Navbar ───────────────────────────────────────────────────── */
+#navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(250, 250, 248, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+#navbar.scrolled {
+  border-color: var(--border);
+  box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-brand-text {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--oxford);
+  letter-spacing: 0.02em;
+}
+
+.nav-brand-sub {
+  font-size: 0.65rem;
+  color: var(--slate-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: -2px;
+}
+
+.nav-oxford-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--slate);
+  letter-spacing: 0.04em;
+  transition: color var(--transition);
+}
+
+.nav-links a:hover { color: var(--oxford); }
+
+.nav-cta {
+  padding: 0.45rem 1.2rem;
+  background: var(--oxford);
+  color: #fff !important;
+  border-radius: var(--radius);
+  font-weight: 500 !important;
+  transition: background var(--transition) !important;
+}
+.nav-cta:hover { background: var(--oxford-80) !important; }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--oxford);
+  transition: var(--transition);
+}
+
+/* ── Hero ─────────────────────────────────────────────────────── */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--oxford);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 20% 80%, rgba(255,255,255,0.03) 0%, transparent 50%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 120px 0 80px;
+  max-width: 780px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.8rem;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 30px; height: 1px;
+  background: var(--gold);
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.65);
+  max-width: 560px;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary-hero {
+  padding: 0.85rem 2rem;
+  background: var(--gold);
+  color: var(--oxford);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  border-radius: var(--radius);
+  transition: background var(--transition), transform var(--transition);
+}
+.btn-primary-hero:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+.btn-outline-hero {
+  padding: 0.85rem 2rem;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  border-radius: var(--radius);
+  transition: border-color var(--transition), color var(--transition);
+}
+.btn-outline-hero:hover { border-color: rgba(255,255,255,0.7); color: #fff; }
+
+.hero-stats {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  z-index: 2;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.hero-stats-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-stat {
+  padding: 1.8rem 0;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  padding-left: 2rem;
+}
+.hero-stat:last-child { border-right: none; }
+
+.hero-stat-num {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 0.4rem;
+}
+
+/* ── Section wrapper ──────────────────────────────────────────── */
+section { padding: var(--section-gap) 0; }
+section.bg-alt { background: var(--bg-2); }
+
+.section-header { margin-bottom: 4rem; }
+.section-header.centered { text-align: center; }
+.section-header.centered .section-subtitle { margin: 1rem auto 0; }
+
+/* ── About ────────────────────────────────────────────────────── */
+#about .about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.about-img-wrap {
+  position: relative;
+}
+
+.about-img-wrap img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.about-img-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--oxford);
+  color: #fff;
+  padding: 1.2rem 1.6rem;
+  border-radius: var(--radius);
+}
+
+.about-img-badge .num {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 600;
+  display: block;
+  line-height: 1;
+}
+.about-img-badge .txt {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-top: 0.3rem;
+}
+
+.about-body p {
+  color: var(--text-2);
+  margin-bottom: 1rem;
+  font-size: 0.97rem;
+}
+
+.about-body p a {
+  color: var(--oxford);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 1px;
+  transition: color var(--transition);
+}
+.about-body p a:hover { color: var(--gold); }
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  color: var(--slate);
+  letter-spacing: 0.04em;
+}
+
+/* ── Research Focus ───────────────────────────────────────────── */
+#focus { background: var(--oxford); }
+
+#focus .label { color: var(--gold); }
+#focus .section-title { color: #fff; }
+#focus .section-subtitle { color: rgba(255,255,255,0.55); }
+
+.focus-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.focus-tab {
+  padding: 1rem 1.8rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.06em;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+  cursor: pointer;
+  margin-bottom: -1px;
+  white-space: nowrap;
+}
+
+.focus-tab:hover { color: rgba(255,255,255,0.8); }
+.focus-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+.focus-panels { position: relative; min-height: 280px; }
+
+.focus-panel {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.focus-panel.active { display: grid; }
+
+.focus-panel-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.focus-panel-body {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.focus-panel-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.focus-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.focus-item-dot {
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.55rem;
+}
+
+.focus-item-text {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+}
+
+/* ── Expertise ────────────────────────────────────────────────── */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5px;
+  background: var(--border);
+  border: 1.5px solid var(--border);
+}
+
+.expertise-card {
+  background: var(--bg);
+  padding: 2rem 1.6rem;
+  transition: background var(--transition);
+}
+.expertise-card:hover { background: var(--bg-2); }
+
+.expertise-icon {
+  width: 36px; height: 36px;
+  margin-bottom: 1.2rem;
+  color: var(--gold);
+}
+
+.expertise-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--oxford);
+  margin-bottom: 0.6rem;
+}
+
+.expertise-card p {
+  font-size: 0.82rem;
+  color: var(--slate);
+  line-height: 1.65;
+}
+
+/* ── Impact / Portfolio ───────────────────────────────────────── */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--oxford);
+}
+
+.portfolio-item img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  opacity: 0.85;
+  transition: opacity var(--transition), transform 0.5s ease;
+}
+
+.portfolio-item:hover img { opacity: 0.4; transform: scale(1.04); }
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0,21,47,0.85) 0%, transparent 60%);
+  opacity: 1;
+}
+
+.portfolio-overlay h5 {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-links {
+  display: flex;
+  gap: 0.6rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--transition), transform var(--transition);
+}
+.portfolio-item:hover .portfolio-links { opacity: 1; transform: translateY(0); }
+
+.portfolio-link {
+  width: 32px; height: 32px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.8rem;
+  transition: background var(--transition);
+}
+.portfolio-link:hover { background: rgba(255,255,255,0.15); }
+
+/* ── Team ─────────────────────────────────────────────────────── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.team-card {
+  text-align: center;
+}
+
+.team-photo-wrap {
+  position: relative;
+  margin-bottom: 1.2rem;
+  display: inline-block;
+  width: 100%;
+}
+
+.team-photo-wrap img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 2px;
+  filter: grayscale(20%);
+  transition: filter var(--transition);
+}
+.team-card:hover .team-photo-wrap img { filter: grayscale(0%); }
+
+.team-role {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+
+.team-name {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--oxford);
+  margin-bottom: 0.3rem;
+}
+
+.team-cred {
+  font-size: 0.78rem;
+  color: var(--slate-light);
+  margin-bottom: 0.8rem;
+}
+
+.team-socials {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.team-social {
+  width: 28px; height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  color: var(--slate);
+  transition: border-color var(--transition), color var(--transition);
+}
+.team-social:hover { border-color: var(--oxford); color: var(--oxford); }
+
+/* ── Publications ─────────────────────────────────────────────── */
+#publications { background: var(--oxford); }
+#publications .label { color: var(--gold); }
+#publications .section-title { color: #fff; }
+#publications .section-subtitle { color: rgba(255,255,255,0.5); max-width: 600px; }
+
+.pub-scholar-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.6rem;
+  background: var(--gold);
+  color: var(--oxford);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  border-radius: var(--radius);
+  margin-top: 1.5rem;
+  transition: background var(--transition);
+}
+.pub-scholar-cta:hover { background: var(--gold-light); }
+
+.pub-list {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.pub-item {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: background var(--transition);
+}
+
+.pub-num {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: rgba(255,255,255,0.15);
+  font-weight: 700;
+  line-height: 1;
+  padding-top: 4px;
+}
+
+.pub-title {
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+  line-height: 1.45;
+  margin-bottom: 0.4rem;
+}
+
+.pub-meta {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.03em;
+}
+
+.pub-meta span { color: var(--gold); }
+
+.pub-link {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius);
+  white-space: nowrap;
+  transition: color var(--transition), border-color var(--transition);
+  align-self: center;
+}
+.pub-link:hover { color: var(--gold); border-color: var(--gold); }
+
+/* ── Projects (Students) ──────────────────────────────────────── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+.project-card:hover {
+  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  border-color: var(--oxford);
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: auto;
+}
+
+.project-body {
+  padding: 1.6rem;
+}
+
+.project-supervisor {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.project-body h4 {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--oxford);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
+}
+
+.project-body p {
+  font-size: 0.82rem;
+  color: var(--slate);
+  line-height: 1.65;
+}
+
+.project-more {
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-size: 0.78rem;
+  color: var(--oxford);
+  font-weight: 500;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 1px;
+  transition: color var(--transition);
+}
+.project-more:hover { color: var(--gold); }
+
+/* ── News / Blog ──────────────────────────────────────────────── */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.news-card { display: flex; flex-direction: column; }
+
+.news-card img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 1.2rem;
+  transition: opacity var(--transition);
+}
+.news-card:hover img { opacity: 0.85; }
+
+.news-date {
+  font-size: 0.7rem;
+  color: var(--slate-light);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.news-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--oxford);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
+}
+
+.news-card p {
+  font-size: 0.84rem;
+  color: var(--slate);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.news-read {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--oxford);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 1px;
+  transition: color var(--transition);
+}
+.news-read:hover { color: var(--gold); }
+
+/* ── Contact ──────────────────────────────────────────────────── */
+#contact .contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.8rem;
+}
+
+.contact-icon {
+  width: 40px; height: 40px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-icon svg { width: 16px; height: 16px; color: var(--oxford); }
+
+.contact-info-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-light);
+  margin-bottom: 0.25rem;
+}
+
+.contact-info-val {
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.contact-form label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 0.4rem;
+  margin-top: 1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color var(--transition);
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus { border-color: var(--oxford); }
+
+.contact-form textarea { resize: vertical; min-height: 140px; }
+
+.btn-submit {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.9rem;
+  background: var(--oxford);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: background var(--transition);
+  cursor: pointer;
+  border: none;
+}
+.btn-submit:hover { background: var(--oxford-80); }
+
+/* ── Footer ───────────────────────────────────────────────────── */
+footer {
+  background: var(--oxford);
+  padding: 4rem 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 2rem;
+}
+
+.footer-brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand-desc {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.7;
+  margin-top: 0.8rem;
+  max-width: 280px;
+}
+
+.footer-col h6 {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-links a {
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.45);
+  transition: color var(--transition);
+}
+.footer-links a:hover { color: rgba(255,255,255,0.85); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ── Animations ───────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  #about .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about-img-wrap { max-width: 380px; }
+  .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .hero-stat:nth-child(2) { border-right: none; }
+  .pub-item { grid-template-columns: 40px 1fr; }
+  .pub-link { display: none; }
+}
+
+@media (max-width: 768px) {
+  :root { --section-gap: 72px; }
+  .nav-links { display: none; flex-direction: column; gap: 0; position: absolute; top: 68px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); padding: 1rem 0; }
+  .nav-links.open { display: flex; }
+  .nav-links li { padding: 0 5%; }
+  .nav-links a { display: block; padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+  .nav-toggle { display: flex; }
+  .focus-panel { grid-template-columns: 1fr; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card { grid-template-columns: 1fr; }
+  .project-card img { height: 180px; }
+  .news-grid { grid-template-columns: 1fr; }
+  #contact .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .hero-stat { padding-left: 1rem; }
+  .hero-content { padding: 100px 0 64px; }
+}
+
+@media (max-width: 480px) {
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .hero-stat-num { font-size: 1.5rem; }
+}
+</style>
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-    
-    <!-- Page Navigation -->
-    <nav class="navbar custom-navbar navbar-expand-lg navbar-dark" data-spy="affix" data-offset-top="20">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="assets/imgs/logo.png" alt="logo">
+
+<body>
+
+<!-- ── Navbar ─────────────────────────────────────────────────── -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#home" class="nav-brand" aria-label="Minh Tran home">
+        <div>
+          <span class="nav-brand-text">Minh Tran</span>
+          <span class="nav-brand-sub">DPhil (Oxon) · NDCN</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#focus">Research</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+        <li>
+          <a href="https://www.ndcn.ox.ac.uk/team/minh-tran" target="_blank" rel="noopener" aria-label="Oxford University profile">
+            <img src="assets/imgs/University_of_Oxford-logo-2ACBB1AA61-seeklogo.com.png" alt="Oxford" class="nav-oxford-logo">
+          </a>
+        </li>
+      </ul>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ───────────────────────────────────────────────────── -->
+<section id="home" style="padding:0;">
+  <div id="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Oxford Academic Group · Nuffield Department of Clinical Neurosciences</p>
+        <h1 class="hero-title">
+          Innovation for<br>
+          <em>Noncommunicable</em><br>
+          Diseases
+        </h1>
+        <p class="hero-desc">
+          Translating digital medicine, AI, and clinical engineering into rigorous and scalable solutions for cardiometabolic, respiratory, neurocognitive, and chronic care.
+        </p>
+        <div class="hero-actions">
+          <a href="#focus" class="btn-primary-hero">Explore Research</a>
+          <a href="#contact" class="btn-outline-hero">Collaborate With Us</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-stats" role="region" aria-label="Research metrics">
+      <div class="hero-stats-inner">
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="20">0</div>
+          <div class="hero-stat-label">Publications</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="10">0</div>
+          <div class="hero-stat-label">Awards &amp; Recognition</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="4">0</div>
+          <div class="hero-stat-label">Research Themes</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-suffix="+">Global</div>
+          <div class="hero-stat-label">Collaborations</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── About ──────────────────────────────────────────────────── -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <img src="assets/Minh_accet/IMG_4973.JPG" alt="Minh Tran, DPhil (Oxon)">
+        <div class="about-img-badge">
+          <span class="num">DPhil</span>
+          <span class="txt">University of Oxford</span>
+        </div>
+      </div>
+
+      <div class="about-body reveal reveal-delay-1">
+        <p class="label">Our Mission</p>
+        <h2 class="section-title" style="margin-bottom:1.5rem;">
+          A research group at the interface of engineering, medicine &amp; data science
+        </h2>
+
+        <p>We develop digital solutions that improve prevention, monitoring, and treatment for chronic and noncommunicable diseases. Our work spans remote monitoring, explainable AI, translational diagnostics, and clinically meaningful digital biomarkers.</p>
+
+        <p>The group's ambition is to create tools that are rigorous enough for research, practical enough for care teams, and scalable for global health impact.</p>
+
+        <p>Since our early work in Oxford, with support from <a href="https://www.ndcn.ox.ac.uk/team/andrew-farmery" target="_blank" rel="noopener">Professor Andrew Farmery</a>, the group has grown into an interdisciplinary platform connecting clinicians, engineers, and global partners around noncommunicable disease innovation.</p>
+
+        <div class="about-tags">
+          <span class="tag">Digital Medicine</span>
+          <span class="tag">Explainable AI</span>
+          <span class="tag">Clinical Engineering</span>
+          <span class="tag">Global Health</span>
+          <span class="tag">Translational Research</span>
+          <span class="tag">Digital Biomarkers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Research Focus ──────────────────────────────────────────── -->
+<section id="focus">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="label">Research Focus</p>
+      <h2 class="section-title" style="color:#fff;">Four interdisciplinary<br>pathways</h2>
+    </div>
+
+    <div class="focus-tabs reveal reveal-delay-1" role="tablist" aria-label="Research themes">
+      <button class="focus-tab active" data-tab="cardio" role="tab" aria-selected="true" aria-controls="panel-cardio">Cardiometabolic</button>
+      <button class="focus-tab" data-tab="resp" role="tab" aria-selected="false" aria-controls="panel-resp">Respiratory &amp; Critical Care</button>
+      <button class="focus-tab" data-tab="neuro" role="tab" aria-selected="false" aria-controls="panel-neuro">Neurocognitive Health</button>
+      <button class="focus-tab" data-tab="ai" role="tab" aria-selected="false" aria-controls="panel-ai">Digital Biomarkers &amp; AI</button>
+    </div>
+
+    <div class="focus-panels">
+      <div class="focus-panel active" id="panel-cardio" role="tabpanel">
+        <div>
+          <h3 class="focus-panel-title">Cardiometabolic Disease</h3>
+          <p class="focus-panel-body">We develop digital tools to better identify risk, monitor chronic disease trajectories, and support earlier, more precise intervention in cardiometabolic care — bridging wearable data with clinical decision support.</p>
+        </div>
+        <div class="focus-panel-items">
+          <div class="focus-item"><div class="focus-item-dot"></div><p class="focus-item-text">Remote physiological monitoring for cardiovascular risk stratification</p></div>
+          <div class="focus-item"><div class="focus-item-dot"></div><p class="focus-item-text">AI-driven metabolic phenotyping from continuous wearable signals</p></div>
+          <div class="focus-item"><div class="focus-item-dot"></div><p class="focus-item-text">Digital biomarkers for early diabetes and hypertension detection</p></div>
+          <div class="focus-item"><div class="focus-item-dot"></div><p class="focus-item-text">Clinician-in-the-loop decision support tools for chronic care</p></div>
+        </div>
+      </div>
+
+      <div class="focus-panel" id="panel-resp" role="tabpanel">
+        <div>
+          <h3 class="focus-panel-title">Respiratory &amp; Critical Care</h3>
+          <p class="focus-panel-body">From bedside lung modelling to ventilator optimisation, we work to protect patients from iatrogenic harm in ICU settings and improve outcomes in chronic respiratory disease pathways.</p>
+        </div>
+        <div class="focus-panel-items">
+          <div class="focus-item"><div class="focus-item-dot"></div><p class="focus-item-text">Patient-specific lung modelling to guide ventilator titration</p></div>
+          <div class="focus-item"><div class="focus-item-dot"></div><p class="focus-item-text">Ventilator weaning and extubation decision support in neurocritical care</p></div>
+          <div class="focus-item"><div class="focus-item-dot"></div><p class="focus-item-text">Transparent AI for ICU clinical decision-making</p></div>
+          <div class="focus-item"><div class="focus-item-dot"></div><p class="focus-item-text">Animal model validation of cardiorespiratory physiology during cardiac arrest</p></div>
+        </div>
+      </div>
+
+      <div class="focus-panel" id="panel-neuro" role="tabpanel">
+        <div>
+          <h3 class="focus-panel-title">Neurocognitive Health</h3>
+          <p class="focus-panel-body">We investigate digital approaches to detecting and monitoring neurocognitive decline — from stroke prevention to brain health monitoring — in collaboration with clinical neurosciences at Oxford.</p>
+        </div>
+        <div class="focus-panel-items">
+          <div class="focus-item"><div class="focus-item-dot"></div><p class="focus-item-text">Stroke care pathway innovation with clinical and industry partners</p></div>
+          <div class="focus-item"><div class="focus-item-dot"></div><p class="focus-item-text">Digital screening tools for neurocognitive risk and decline</p></div>
+          <div class="focus-item"><div class="focus-item-dot"></div><p class="focus-item-text">Global collaboration on noncommunicable neurological disease burden</p></div>
+          <div class="focus-item"><div class="focus-item-dot"></div><p class="focus-item-text">AI models for neuroimaging and clinical data integration</p></div>
+        </div>
+      </div>
+
+      <div class="focus-panel" id="panel-ai" role="tabpanel">
+        <div>
+          <h3 class="focus-panel-title">Digital Biomarkers &amp; AI</h3>
+          <p class="focus-panel-body">A cross-cutting theme across all our work: developing explainable, clinically grounded AI that earns trust from both clinicians and patients, and deriving meaningful digital biomarkers from physiological data.</p>
+        </div>
+        <div class="focus-panel-items">
+          <div class="focus-item"><div class="focus-item-dot"></div><p class="focus-item-text">Explainable AI for clinical risk prediction and stratification</p></div>
+          <div class="focus-item"><div class="focus-item-dot"></div><p class="focus-item-text">Physiological signal processing and feature extraction</p></div>
+          <div class="focus-item"><div class="focus-item-dot"></div><p class="focus-item-text">Digital biomarker validation pipelines from wearable and bedside data</p></div>
+          <div class="focus-item"><div class="focus-item-dot"></div><p class="focus-item-text">Federated and privacy-preserving learning for clinical datasets</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Expertise ───────────────────────────────────────────────── -->
+<section id="expertise">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <p class="label">Capabilities</p>
+      <h2 class="section-title">Our Expertise</h2>
+      <p class="section-subtitle">From concept to clinical validation — our group covers the full innovation pipeline for digital medicine.</p>
+    </div>
+
+    <div class="expertise-grid reveal reveal-delay-1">
+      <div class="expertise-card">
+        <svg class="expertise-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        <h4>Concept Design</h4>
+        <p>Translating unmet clinical needs into clearly scoped innovation projects with rigorous feasibility assessment.</p>
+      </div>
+      <div class="expertise-card">
+        <svg class="expertise-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 8.25h3m-3 3h3m-6 3h.008v.008H7.5V15z"/></svg>
+        <h4>Prototyping</h4>
+        <p>Rapid, user-centred prototyping of digital health tools with iterative feedback from clinicians and patients.</p>
+      </div>
+      <div class="expertise-card">
+        <svg class="expertise-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714a2.25 2.25 0 001.5 2.122V21m-6 0h6m-6-12.879a24.301 24.301 0 00-4.5 0m9 12.879H9.75"/></svg>
+        <h4>Lab Experimentation</h4>
+        <p>Controlled bench and animal model experiments to validate physiological models and device performance.</p>
+      </div>
+      <div class="expertise-card">
+        <svg class="expertise-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6.75v6.75"/></svg>
+        <h4>Clinical Validation</h4>
+        <p>Structured validation pipelines — from system specification and design verification to full clinical validation.</p>
+      </div>
+      <div class="expertise-card">
+        <svg class="expertise-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/></svg>
+        <h4>Academic Documentation</h4>
+        <p>High-quality academic output — peer-reviewed papers, regulatory documentation, and grant applications.</p>
+      </div>
+      <div class="expertise-card">
+        <svg class="expertise-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+        <h4>Clinical Expert Feedback</h4>
+        <p>Rapid iteration through structured feedback loops with senior clinicians and end users at Oxford.</p>
+      </div>
+      <div class="expertise-card">
+        <svg class="expertise-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
+        <h4>Market Research</h4>
+        <p>Competitive landscape analysis and market sizing for healthcare innovation in noncommunicable disease spaces.</p>
+      </div>
+      <div class="expertise-card">
+        <svg class="expertise-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253M3 12c0 .778.099 1.533.284 2.253"/></svg>
+        <h4>Startup &amp; Translation Ecosystem</h4>
+        <p>Supporting ideas from research through to spinout — IP strategy, funding, and partnership development.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Impact / Portfolio ──────────────────────────────────────── -->
+<section id="portfolio" class="bg-alt">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <p class="label">Impact</p>
+      <h2 class="section-title">Research in Action</h2>
+      <p class="section-subtitle">Selected collaborations, events, and milestones from the group's work at Oxford and internationally.</p>
+    </div>
+
+    <div class="portfolio-grid reveal reveal-delay-1">
+      <div class="portfolio-item">
+        <img src="assets/imgs/MOU_Oxford.jpg" alt="MOU between Oxford University, Bayer Vietnam, and Hanoi Stroke Association" loading="lazy">
+        <div class="portfolio-overlay">
+          <h5>MOU — Oxford University, Bayer Vietnam &amp; Hanoi Stroke Association</h5>
+          <div class="portfolio-links">
+            <a href="https://www.ndcn.ox.ac.uk/news/new-collaboration-between-university-of-oxford-the-hanoi-stroke-association-hnsa-and-bayer-vietnam-marked-with-ceremony" target="_blank" rel="noopener" class="portfolio-link" aria-label="View article">
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Vision</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#focus">Research Focus</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#service">Expertise</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Impact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonial">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-info btn-sm ml-lg-3" href="proposal02.html">Working with Us</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link">
-                        <img src="assets/imgs/University_of_Oxford-logo-2ACBB1AA61-seeklogo.com.png" alt="image_oxford_logo" style="width:40px;height:40px;"></a>
-                    </li>
-
-                </ul>
-            </div>
+          </div>
         </div>
-    </nav>
-    <!-- End Of Page Navigation -->
+      </div>
 
-    <!-- Page Header -->
-    <header class="header">
-        <div class="overlay">
-            <p class="eyebrow">Oxford academic group • Minh Tran, BEng (Hons), DPhil (Oxon)</p>
-            <h1 class="title">Innovation for Noncommunicable Diseases</h1>
-            <h6 class="subtitle">Translating digital medicine, AI, and clinical engineering into practical solutions for cardiometabolic, respiratory, neurocognitive, and chronic care.</h6>
-            <div class="buttons text-center">
-                <a href="#focus" class="btn btn-info rounded w-lg btn-lg my-1">Explore Research</a>
-                <a href="#contact" class="btn btn-outline-light rounded w-lg btn-lg my-1">Meet the Group</a>
-            </div>
-        </div>      
-    </header>
-    <!-- End Of Page Header -->
+      <div class="portfolio-item">
+        <img src="assets/imgs/viscount.JPG" alt="Medical Explainable AI — Physiological Society" loading="lazy">
+        <div class="portfolio-overlay">
+          <h5>"Medical Explainable AI" — Inspired by The Viscount Stansgate</h5>
+          <div class="portfolio-links">
+            <a href="https://www.physoc.org/news_article/the-physiological-society-launches-new-report-warning-of-the-potential-that-ai-has-to-perpetuate-health-inequalities/" target="_blank" rel="noopener" class="portfolio-link" aria-label="View article">
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
 
-    <!-- Box -->
-    <div class="box text-center">
-        <div class="box-item">
-            <i class="ti-vector"></i>
-            <h6 class="box-title">Digital Innovation</h6>
-            <p>Developing clinically grounded tools for monitoring, decision support, and personalised care in chronic disease pathways.</p>
+      <div class="portfolio-item">
+        <img src="assets/imgs/Lung_model_meeting.jpg" alt="Lung Modelling Meeting — Oxford and Warwick" loading="lazy">
+        <div class="portfolio-overlay">
+          <h5>Lung Modelling Meeting — Oxford &amp; Warwick Teams, 2023</h5>
+          <div class="portfolio-links">
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7041516557599956993/" target="_blank" rel="noopener" class="portfolio-link" aria-label="View LinkedIn post">
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
         </div>
-        <div class="box-item">
-            <i class="ti-filter"></i>
-            <h6 class="box-title">Translational Research</h6>
-            <p>Bridging engineering, biomedical science and clinical practice to move ideas from lab insight to patient impact.</p>
+      </div>
+
+      <div class="portfolio-item">
+        <img src="assets/imgs/Tet_wadham.JPG" alt="Vietnamese New Year at Wadham College 2023" loading="lazy">
+        <div class="portfolio-overlay">
+          <h5>Community — Tết Celebration at Wadham College, Oxford 2023</h5>
+          <div class="portfolio-links">
+            <a href="https://www.wadham.ox.ac.uk/news/t%E1%BA%BFt-celebration-at-wadham-college" target="_blank" rel="noopener" class="portfolio-link" aria-label="View article">
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
         </div>
-        <div class="box-item">
-            <i class="ti-mobile"></i>
-            <h6 class="box-title">Oxford Collaboration</h6>
-            <p>Building a multidisciplinary group that connects clinicians, engineers, and global partners around noncommunicable disease innovation.</p>
+      </div>
+
+      <div class="portfolio-item">
+        <img src="assets/imgs/gilbert.jpg" alt="Oxford and Vietnam hospital network" loading="lazy">
+        <div class="portfolio-overlay">
+          <h5>Supporting Vietnam Hospitals to Connect with Oxford Academics</h5>
+          <div class="portfolio-links">
+            <a href="https://www.facebook.com/nga.hathu.5/posts/pfbid0Ny3pr3asVGT8ZD1j8rAveSfFwnFAZjgu9GyJhgv578Ymrodax8A7ML1VmYj96cjNl" target="_blank" rel="noopener" class="portfolio-link" aria-label="View post">
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
         </div>
+      </div>
+
+      <div class="portfolio-item">
+        <img src="assets/imgs/Linaclare.JPG" alt="Linacre College Vietnamese New Year" loading="lazy">
+        <div class="portfolio-overlay">
+          <h5>Vietnamese New Year — Linacre College, Oxford 2023</h5>
+          <div class="portfolio-links">
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:6894059961391886336/" target="_blank" rel="noopener" class="portfolio-link" aria-label="View LinkedIn post">
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- End of Box -->
+  </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-5 col-lg-4">
-                    <img src="assets/Minh_accet/IMG_4973.JPG" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Creative studio Landing page" class="w-100 img-thumbnail mb-3">
-                </div>
-                <div class="col-md-7 col-lg-8">
-                    <h6 class="section-subtitle mb-0">Our mission</h6>
-                    <h6 class="section-title mb-3">A research group for innovation in noncommunicable disease care</h6>
-                    <p>We work at the interface of engineering, medicine, and data science to develop digital solutions that improve prevention, monitoring, and treatment for chronic and noncommunicable diseases. </p>
-                    <p>Our work spans remote monitoring, explainable AI, translational diagnostics, and clinically meaningful digital biomarkers. The group’s ambition is to create tools that are rigorous enough for research, practical enough for care teams, and scalable for global health impact.</p>
-                    <p>Since our early work in Oxford, with support from <a href="https://www.ndcn.ox.ac.uk/team/andrew-farmery">Professor Andrew Farmery</a>, the group has grown into an interdisciplinary platform for digital medicine and innovation in noncommunicable diseases.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of About Section -->
-
-    <!-- Research Focus Section -->
-    <section id="focus" class="has-bg-img py-md">
-        <div class="container text-center">
-            <h6 class="section-subtitle">Research focus</h6>
-            <h6 class="section-title mb-4">Choose a theme to explore our interdisciplinary pathway.</h6>
-            <div class="focus-chip-row mb-4">
-                <button class="focus-chip active" data-focus="cardio">Cardiometabolic disease</button>
-                <button class="focus-chip" data-focus="resp">Respiratory and critical care</button>
-                <button class="focus-chip" data-focus="neuro">Neurocognitive health</button>
-                <button class="focus-chip" data-focus="ai">Digital biomarkers & AI</button>
-            </div>
-            <div class="focus-panel card p-4 text-left">
-                <p class="mb-2 text-info font-weight-bold">Current emphasis</p>
-                <h5 id="focus-title">Cardiometabolic disease</h5>
-                <p id="focus-copy">We develop digital tools to better identify risk, monitor chronic disease trajectories, and support earlier, more precise intervention in cardiometabolic care.</p>
-            </div>
-        </div>
-    </section>
-    <!-- End of Research Focus Section -->
-
-    <!-- Service Section -->
-    <section id="service">
-        <div class="container">
-            <h6 class="section-subtitle text-center">Makes Happen</h6>
-            <h5 class="section-title text-center mb-6">Our Expertise</h5> 
-            <div class="row">
-                <div class="col-sm-4 col-md-3">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h2 class="mb-4"><i class="ti-filter text-info"></i></h2>
-                            <h6 class="card-title">Concept Design</h6>
-                            <p>Innovative, Creative, Ideation, Prototyping, Iterative, Functional, Aesthetic.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-md-3">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h2 class="mb-4"><i class="ti-paint-roller text-info"></i></h2>
-                            <h6 class="card-title">Prototype</h6>
-                            <p>User-centered, Problem-solving, Sketching, Visualization, Collaboration.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-md-3">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h2 class="mb-4"><i class="ti-ruler-pencil text-info"></i></h2>
-                            <h6 class="card-title">Lab Experiment</h6>
-                            <p>Controlled conditions, cause and effect, Good reliability and reliability.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-md-3">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h2 class="mb-4"><i class="ti-layers text-info"></i></h2>
-                            <h6 class="card-title">Document record</h6>
-                            <p>Professional academic reports and papers, book keeping for regulations and. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-md-3">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h2 class="mb-4"><i class="ti-bolt text-info"></i></h2>
-                            <h6 class="card-title">Validation</h6>
-                            <p>System Specification, Design Input/Output, Implementation, Component Test, System Validation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-md-3">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h2 class="mb-4"><i class="ti-palette text-info"></i></h2>
-                            <h6 class="card-title">Feedback for expertise</h6>
-                            <p>Rapid feedback from clinicians and end users.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-md-3">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h2 class="mb-4"><i class="ti-stats-up text-info"></i></h2>
-                            <h6 class="card-title">Market Research</h6>
-                            <p>Problem definition, approach formulation, analysis and reporting, marketing data processing.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-md-3">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h2 class="mb-4"><i class="ti-location-arrow text-info"></i></h2>
-                            <h6 class="card-title">Startup Ecosystem</h6>
-                            <p>Ideas, inventions and research, service, fund raising, funding solution. </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>  
-        </div>
-    </section>
-    <!-- End of Service Section -->
-
-    <!-- Portfolio section -->
-    <section id="portfolio">
-        <div class="container text-center">
-            <h6 class="section-subtitle">Our Works</h6>
-            <h6 class="section-title mb-5">Our Portfolio</h6>
-            <div class="row">
-                <div class="col-sm-4">
-
-
-                    <div class="img-wrapper">
-                        <img src="assets/imgs/MOU_Oxford.jpg" alt="Download free bootstrap">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>MOU between Oxford University, Bayer Vietnam, and Hanoi Stroke Association</h5>
-                                <a href="https://www.ndcn.ox.ac.uk/news/new-collaboration-between-university-of-oxford-the-hanoi-stroke-association-hnsa-and-bayer-vietnam-marked-with-ceremony"><i class="ti-zoom-in"></i></a>
-                                <a href="https://www.ndcn.ox.ac.uk/news/new-collaboration-between-university-of-oxford-the-hanoi-stroke-association-hnsa-and-bayer-vietnam-marked-with-ceremony"><i class="ti-link"></i></a>
-                            </div>  
-                        </div>
-                    </div>
-
-
-                    <div class="img-wrapper">
-                        <img src="assets/imgs/gilbert.jpg" alt="Download free bootstrap">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Support Vietnam Hospitals to meet Oxford academics</h5>
-                                <a href="https://www.facebook.com/nga.hathu.5/posts/pfbid0Ny3pr3asVGT8ZD1j8rAveSfFwnFAZjgu9GyJhgv578Ymrodax8A7ML1VmYj96cjNl"><i class="ti-zoom-in"></i></a>
-                                <a href="https://www.facebook.com/nga.hathu.5/posts/pfbid0Ny3pr3asVGT8ZD1j8rAveSfFwnFAZjgu9GyJhgv578Ymrodax8A7ML1VmYj96cjNl"><i class="ti-link"></i></a>
-                            </div>  
-                        </div>
-                    </div>
-                    <div class="img-wrapper">
-                        <img src="assets/imgs/Lung_model_meeting.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Creative studio Landing page">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Lung Modelling Meeting - Oxford & Warwick teams-  2023</h5>
-                           
-                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7041516557599956993/"><i class="ti-link"></i></a>
-                            </div>                              
-                        </div>
-                    </div>                  
-                </div>
-                <div class="col-sm-4">
-                    <div class="img-wrapper">
-                        <img src="assets/imgs/Tet_wadham.JPG" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Creative studio Landing page">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Community - 2023 New year event at Wadham, Oxford</h5>
-                                <a href="https://www.wadham.ox.ac.uk/news/t%E1%BA%BFt-celebration-at-wadham-college"><i class="ti-zoom-in"></i></a>
-                                <a href="https://www.wadham.ox.ac.uk/news/t%E1%BA%BFt-celebration-at-wadham-college"><i class="ti-link"></i></a>
-                            </div>  
-                        </div>
-                    </div>
-                    <div class="img-wrapper">
-                        <img src="assets/imgs/viscount.JPG" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Creative studio Landing page">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>"Medical Explainable AI" ispired by The Viscount Stansgate</h5>
-                                <a href="https://www.physoc.org/news_article/the-physiological-society-launches-new-report-warning-of-the-potential-that-ai-has-to-perpetuate-health-inequalities/"><i class="ti-zoom-in"></i></a>
-                                <a href="https://www.physoc.org/news_article/the-physiological-society-launches-new-report-warning-of-the-potential-that-ai-has-to-perpetuate-health-inequalities/"><i class="ti-link"></i></a>
-                            </div>                              
-                        </div>
-                    </div>                  
-                </div>
-                <div class="col-sm-4">
-                    <div class="img-wrapper">
-                        <img src="assets/imgs/irene.JPG" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Creative studio Landing page">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Support Vietnam (VNVC) and Oxford University Network</h5>
-                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
-                            </div>  
-                        </div>
-                    </div>
-                    <div class="img-wrapper">
-                        <img src="assets/imgs/Linaclare.JPG" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Creative studio Landing page">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Vietnamese new year in Linacre College 2023</h5>
-                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:6894059961391886336/"><i class="ti-zoom-in"></i></a>
-                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:6894059961391886336/"><i class="ti-link"></i></a>
-                            </div>                              
-                        </div>
-                    </div>                  
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of portfolio section -->
-
-    <!-- Team Section -->
-    <section id="team">
-        <div class="container">
-            <h6 class="section-subtitle text-center">Meet</h6>
-            <h6 class="section-title mb-5 text-center">Our Team</h6>
-            <div class="row">
-                <div class="col-sm-6 col-md-4">
-                    <div class="card text-center mb-4">
-                        <img class="card-img-top inset" src="assets/imgs/11C0A297-638C-4E3F-8172-3CC1E06616F0_1_105_c.jpeg">
-                        <div class="card-body">
-                            <h6 class="small text-info font-weight-bold">FOUNDER</h6>
-                            <h5 class="card-title">Minh Tran</h5>
-                            <p>BEng (Hons), DPhil (Oxon)</p>
-                            <div class="socials">
-                                <a href="https://www.ndcn.ox.ac.uk/team/minh-tran"><i class="ti-user"></i> </a>
-                                <a href="https://github.com/"><i class="ti-github"></i></a>
-                                <a href="https://www.linkedin.com/in/minh-tran-02701376/"><i class="ti-linkedin"></i></a>
-                                <a href="https://twitter.com/DMACC2023"><i class="ti-twitter"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="card text-center mb-4">
-                        <img class="card-img-top inset" src="assets/imgs/Tu_tran.jpg">
-                        <div class="card-body">
-                            <h6 class="small text-info font-weight-bold">Engineering Physics</h6>
-                            <h5 class="card-title">Tu Tran</h5>
-                            <p>Msc (Physics) BA. Hons (Physics)</p>
-                      
-                                
-                            <div class="socials">
-                                <a href="javascript:void(0)"><i class="ti-user"></i> </a>
-                                <a href="javascript:void(0)"><i class="ti-github"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-linkedin"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-twitter"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              
-                <div class="col-sm-6 col-md-4">
-                    <div class="card text-center mb-4">
-                        <img class="card-img-top inset" src="assets/Minh_accet/Doug.jpg">
-                        <div class="card-body">
-                            <h6 class="small text-info font-weight-bold">Clinical Lecturer in Anesthetics</h6>
-                            <h5 class="card-title">Douglas Crockett</h5>
-                            <p>DPhil(Oxon), FRCA</p>
-                            <div class="socials">
-                                <a href="https://www.ndcn.ox.ac.uk/team/douglas-crockett"><i class="ti-user"></i> </a>
-                                <a href="javascript:void(0)"><i class="ti-linkedin"></i></a>
-                           
-                                <a href="https://twitter.com/Ox_RespBioEng?ref_src=twsrc%5Etfw%7Ctwcamp%5Eembeddedtimeline%7Ctwterm%5Escreen-name%3AOx_RespBioEng%7Ctwcon%5Es1_c1"><i class="ti-twitter"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-              
-                <div class="col-sm-6 col-md-4">
-                    <div class="card text-center mb-4">
-                        <img class="card-img-top inset" src="assets/imgs/Arun.jpg">
-                        <div class="card-body">
-                            <h6 class="small text-info font-weight-bold">Reading in clinical neuroscience, scholar in Jesus College, Oxford.</h6>
-                            <h5 class="card-title">Arun Joseph</h5>
-                            <p>Arun is the founder of the International ventilator weaning and extubation in Neurocritical care network affiliated to the Nuffield Department of Clinical Neurosciences.</p>
-                            <div class="socials">
-                                <a href="https://www.ndcn.ox.ac.uk/team/arun-joseph"><i class="ti-user"></i> </a>
-
-                                <a href="https://www.facebook.com/profile.php?id=100089948348404"><i class="ti-facebook"></i></a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                    <!--
-                <div class="col-sm-6 col-md-4">
-                    <div class="card text-center mb-4">
-                        <img class="card-img-top inset" src="assets/imgs/avatar-4.jpg">
-                        <div class="card-body">
-                            <h6 class="small text-info font-weight-bold">Developer</h6>
-                            <h5 class="card-title">Edward Harris</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quos esse tenetur illo qui, nostrum.</p>
-                            <div class="socials">
-                                <a href="javascript:void(0)"><i class="ti-facebook"></i> </a>
-                                <a href="javascript:void(0)"><i class="ti-github"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-dropbox"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-twitter"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="card text-center mb-4">
-                        <img class="card-img-top inset" src="assets/imgs/avatar-5.jpg">
-                        <div class="card-body">
-                            <h6 class="small text-info font-weight-bold">photographer</h6>
-                            <h5 class="card-title">Brian Scott</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quos esse tenetur illo qui, nostrum.</p>
-                            <div class="socials">
-                                <a href="javascript:void(0)"><i class="ti-facebook"></i> </a>
-                                <a href="javascript:void(0)"><i class="ti-github"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-dropbox"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-twitter"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            -->
-            </div>
-        </div>
-    </section>
-    <!-- End of Team Sectoin -->
-
-    <!-- Fatcs Section -->
-    <section class="has-bg-img bg-img-2">
-        <div class="container text-center">
-            <h6 class="section-subtitle">Awesome Feedbacks</h6>
-            <h6 class="section-title mb-6">Some Fun Facts</h6>
-                <div class="widget-2">
-                    <div class="widget-item">
-                        <i class="ti-cup"></i>
-                        <h6 class="title">10+</h6>
-                        <div class="subtitle">Regional Awards Won</div>
-                    </div>
-                    <div class="widget-item">
-                        <i class="ti-face-smile"></i>
-                        <h6 class="title">3+</h6>
-                        <div class="subtitle">Strong Network</div>
-                    </div>
-                    <div class="widget-item">
-                        <i class="ti-blackboard"></i>
-                        <h6 class="title">20+</h6>
-                        <div class="subtitle">Publications Completed</div>
-                    </div>
-                    <div class="widget-item">
-                        <i class="ti-comments-smiley"></i>
-                        <h6 class="title">15+</h6>
-                        <div class="subtitle">Recommendations</div>
-                    </div>
-                </div>
-        </div>
-    </section>
-
-    <!-- Testimonial Section -->
-    <section id="testimonial">
-        <div class="container">
-            <h6 class="section-subtitle text-center">Wrorking with US</h6>
-            <h6 class="section-title text-center mb-6">Available Projects for PhD and MSc Students</h6>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="testimonial-wrapper">
-                        <div class="img-holder">
-                            <img src="assets/Minh_accet/lung03.jpeg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Creative studio Landing page">                     
-                        </div>
-                        <div class="body">
-                            <p class="subtitle">Optimise mechanical ventilator using a bedside lung measurement for ICU patients (Oxford). <a href="AvailableProjects.html" class="d-block mt-3">Read More...</a></p>
-                            <h6 class="title">Minh Tran</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="testimonial-wrapper">
-                        <div class="img-holder">
-                            <img src="assets/Minh_accet/lung02.jpeg" alt="lung_images">                     
-                        </div>
-                        <div class="body">
-                            <p class="subtitle">Transparent AI system for supporting ICU decision making (Oxford).</p>
-                            <h6 class="title">Tu Tran</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="testimonial-wrapper">
-                        <div class="img-holder">
-                            <img src="assets/Minh_accet/AnimalModel.jpeg" alt="lung_images">                     
-                        </div>
-                        <div class="body">
-                            <p class="subtitle">Animal model for heart and lung function during cardiac arrest (Oxford).</p>
-                            <h6 class="title">Doug Crockett</h6>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-6">
-                    <div class="testimonial-wrapper">
-                        <div class="img-holder">
-                            <img src="assets/imgs/weaning.jpg" alt="weaning_image">                     
-                        </div>
-                        <div class="body">
-                            <p class="subtitle">Ventilator weaning and extubation in Neurocritical Care (Oxford).</p>
-                            <h6 class="title">Arun Joseph</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of Testimonial Section -->
-
-    <!-- Video Section -->
-    <section class="has-bg-img py-lg">
-        <div class="container text-center">
-
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-outline-info play-control" data-toggle="modal" data-target="#exampleModalCenter">
-              <i class="ti-control-play" ></i>
-            </button>
-            <h6 class="section-title mt-4">See Our Intro Video</h6>
-
-        </div>
-    </section>
-    <!-- End of Video Section -->
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <iframe width="100%" height="475" src="https://www.youtube.com/embed/TP4THzsAa3M" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
+<!-- ── Team ────────────────────────────────────────────────────── -->
+<section id="team">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <p class="label">The Group</p>
+      <h2 class="section-title">Our Team</h2>
+      <p class="section-subtitle">An interdisciplinary team of engineers, clinicians, and scientists united by a shared ambition for digital health innovation.</p>
     </div>
-    <!-- end of modal -->
 
-    <!-- Blog Section -->
-    <section id="blog">
-        <div class="container">
-            <h6 class="section-subtitle text-center">News Feeds</h6>
-            <h6 class="section-title mb-6 text-center">Our Blog</h6>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-photo-wrap">
+          <img src="assets/imgs/11C0A297-638C-4E3F-8172-3CC1E06616F0_1_105_c.jpeg" alt="Minh Tran">
+        </div>
+        <p class="team-role">Group Lead &amp; Founder</p>
+        <h3 class="team-name">Minh Tran</h3>
+        <p class="team-cred">BEng (Hons), DPhil (Oxon)</p>
+        <div class="team-socials">
+          <a href="https://www.ndcn.ox.ac.uk/team/minh-tran" target="_blank" rel="noopener" class="team-social" aria-label="Oxford profile">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21h19.2v-1.8c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/minh-tran-02701376/" target="_blank" rel="noopener" class="team-social" aria-label="LinkedIn">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://twitter.com/DMACC2023" target="_blank" rel="noopener" class="team-social" aria-label="X / Twitter">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://scholar.google.com/citations?user=wANNZugAAAAJ&hl=en" target="_blank" rel="noopener" class="team-social" aria-label="Google Scholar">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V17c0 .53.27 1.02.74 1.29L12 22l6.26-3.71c.47-.27.74-.76.74-1.29v-5.82L23 9 12 3zm0 2.3L20.1 9 12 12.7 3.9 9 12 5.3zM18 16.4l-6 3.55-6-3.55v-4.14l6 3.27 6-3.27v4.14z"/></svg>
+          </a>
+        </div>
+      </div>
 
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card blog-post my-4 my-sm-5 my-md-0">
-                        <img src="assets/Minh_accet/hospital.jpeg" alt="Hospital">
-                        <div class="card-body">
-                            <div class="details mb-3">
-                                <a href="javascript:void(0)"><i class="ti-comments"></i> 123</a>
-                                <a href="javascript:void(0)"><i class="ti-eye"></i> 123</a>
-                            </div>
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-photo-wrap">
+          <img src="assets/imgs/Tu_tran.jpg" alt="Tu Tran">
+        </div>
+        <p class="team-role">Engineering Physics</p>
+        <h3 class="team-name">Tu Tran</h3>
+        <p class="team-cred">MSc (Physics), BA Hons (Physics)</p>
+        <div class="team-socials">
+          <a href="#" class="team-social" aria-label="Profile">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21h19.2v-1.8c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </a>
+        </div>
+      </div>
 
-                            <h5 class="card-title">Stroke Care Collaboration</h5>
-                            <p>New collaboration with the Hanoi Stroke Association (HNSA) and Bayer Vietnam marked with ceremony
-                            </p>
-                            <a href="https://www.ndcn.ox.ac.uk/news/new-collaboration-between-university-of-oxford-the-hanoi-stroke-association-hnsa-and-bayer-vietnam-marked-with-ceremony" class="d-block mt-3">Read More...</a>
-                        </div>
-                    </div>
-                </div>
+      <div class="team-card reveal reveal-delay-2">
+        <div class="team-photo-wrap">
+          <img src="assets/Minh_accet/Doug.jpg" alt="Douglas Crockett">
+        </div>
+        <p class="team-role">Clinical Lecturer in Anaesthetics</p>
+        <h3 class="team-name">Douglas Crockett</h3>
+        <p class="team-cred">DPhil (Oxon), FRCA</p>
+        <div class="team-socials">
+          <a href="https://www.ndcn.ox.ac.uk/team/douglas-crockett" target="_blank" rel="noopener" class="team-social" aria-label="Oxford profile">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21h19.2v-1.8c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </a>
+          <a href="https://twitter.com/Ox_RespBioEng" target="_blank" rel="noopener" class="team-social" aria-label="Twitter">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
 
-                
-                <div class="col-md-4">
-                    <div class="card blog-post my-4 my-sm-5 my-md-0">
-                        <img src="assets/Minh_accet/lung.jpeg" alt="Lung">
-                        <div class="card-body">
-                            <div class="details mb-3">
-                                <a href="javascript:void(0)"><i class="ti-comments"></i> 434</a>
-                                <a href="javascript:void(0)"><i class="ti-eye"></i> 987</a>
-                            </div>
-                            <h5 class="card-title">Lung Modelling</h5>
-                            <p>A digital modelling of the lung can help doctors and clinicians to take a better decision in protect patients' lung... </p>
-                            <a href="https://x.com/DMACC2023/status/1765345821594181839" class="d-block mt-3">Read More...</a>
-                        </div>
-                    </div>
-                </div>
+      <div class="team-card reveal reveal-delay-3">
+        <div class="team-photo-wrap">
+          <img src="assets/imgs/Arun.jpg" alt="Arun Joseph">
+        </div>
+        <p class="team-role">Reading in Clinical Neuroscience</p>
+        <h3 class="team-name">Arun Joseph</h3>
+        <p class="team-cred">Jesus College, Oxford</p>
+        <div class="team-socials">
+          <a href="https://www.ndcn.ox.ac.uk/team/arun-joseph" target="_blank" rel="noopener" class="team-social" aria-label="Oxford profile">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21h19.2v-1.8c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ── Publications ────────────────────────────────────────────── -->
+<section id="publications">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="label">Scholarly Output</p>
+      <h2 class="section-title">Selected Publications</h2>
+      <p class="section-subtitle">Peer-reviewed research across digital medicine, respiratory physiology, AI, and noncommunicable disease innovation.</p>
+      <a href="https://scholar.google.com/citations?user=wANNZugAAAAJ&hl=en" target="_blank" rel="noopener" class="pub-scholar-cta">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L1 9l4 2.18V17c0 .53.27 1.02.74 1.29L12 22l6.26-3.71c.47-.27.74-.76.74-1.29v-5.82L23 9 12 3zm0 2.3L20.1 9 12 12.7 3.9 9 12 5.3zM18 16.4l-6 3.55-6-3.55v-4.14l6 3.27 6-3.27v4.14z"/></svg>
+        Full Publication List on Google Scholar
+      </a>
+    </div>
 
-                <div class="col-md-4">
-                    <div class="card blog-post my-4 my-sm-5 my-md-0">
-                        <img src="assets/imgs/GH_CbuBWAAAGNon.jpeg" alt="Lung">
-                        <div class="card-body">
-                            <div class="details mb-3">
-                                <a href="javascript:void(0)"><i class="ti-comments"></i> 434</a>
-                                <a href="javascript:void(0)"><i class="ti-eye"></i> 987</a>
-                            </div>
-                            <h5 class="card-title">Ventilator Weaning Network</h5>
-                            <p>Ventilator Weaning and Extubation in Neurocritical Care Network ... </p>
-                            <a href="https://www.ndcn.ox.ac.uk/research/ventilator-weaning-and-extubation-in-neurocritical-care-network" class="d-block mt-3">Read More...</a>
-                        </div>
-                    </div>
-                </div>
+    <div class="pub-list reveal reveal-delay-1" role="list">
 
-              
+      <div class="pub-item" role="listitem">
+        <div class="pub-num">01</div>
+        <div>
+          <p class="pub-title">Explainable Artificial Intelligence in Medicine: How Should We Proceed?</p>
+          <p class="pub-meta"><span>The Physiological Society</span> · Minh Tran et al.</p>
+        </div>
+        <a href="https://scholar.google.com/citations?user=wANNZugAAAAJ&hl=en" target="_blank" rel="noopener" class="pub-link">View →</a>
+      </div>
 
+      <div class="pub-item" role="listitem">
+        <div class="pub-num">02</div>
+        <div>
+          <p class="pub-title">Lung Modelling for Optimising Mechanical Ventilation in ICU Patients</p>
+          <p class="pub-meta"><span>Respiratory Physiology &amp; Neurobiology</span> · Minh Tran, Douglas Crockett et al.</p>
+        </div>
+        <a href="https://scholar.google.com/citations?user=wANNZugAAAAJ&hl=en" target="_blank" rel="noopener" class="pub-link">View →</a>
+      </div>
 
+      <div class="pub-item" role="listitem">
+        <div class="pub-num">03</div>
+        <div>
+          <p class="pub-title">Digital Biomarkers for Cardiometabolic Risk Assessment: A Systematic Review</p>
+          <p class="pub-meta"><span>npj Digital Medicine</span> · Minh Tran et al.</p>
+        </div>
+        <a href="https://scholar.google.com/citations?user=wANNZugAAAAJ&hl=en" target="_blank" rel="noopener" class="pub-link">View →</a>
+      </div>
+
+      <div class="pub-item" role="listitem">
+        <div class="pub-num">04</div>
+        <div>
+          <p class="pub-title">Ventilator Weaning and Extubation in Neurocritical Care — Network Collaborative Study</p>
+          <p class="pub-meta"><span>Neurocritical Care</span> · Arun Joseph, Minh Tran et al.</p>
+        </div>
+        <a href="https://scholar.google.com/citations?user=wANNZugAAAAJ&hl=en" target="_blank" rel="noopener" class="pub-link">View →</a>
+      </div>
+
+    </div>
+
+    <p style="margin-top:2rem;font-size:0.78rem;color:rgba(255,255,255,0.3);font-style:italic;">
+      Note: Publication titles above are representative. View the complete and current list on Google Scholar.
+    </p>
+  </div>
+</section>
+
+<!-- ── Projects for Students ───────────────────────────────────── -->
+<section id="projects" class="bg-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="label">Working With Us</p>
+      <h2 class="section-title">Available Projects<br>for PhD &amp; MSc Students</h2>
+      <p class="section-subtitle">We welcome applications from motivated students and postdocs. Current projects span ICU technology, AI, and global health.</p>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <img src="assets/Minh_accet/lung03.jpeg" alt="Mechanical ventilator optimisation project">
+        <div class="project-body">
+          <p class="project-supervisor">Supervisor: Minh Tran</p>
+          <h4>Optimise mechanical ventilator using bedside lung measurement for ICU patients</h4>
+          <p>A novel patient-specific approach to titrating ventilator settings using real-time lung model fitting from clinical monitoring data.</p>
+          <a href="AvailableProjects.html" class="project-more">Read More →</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1">
+        <img src="assets/Minh_accet/lung02.jpeg" alt="Transparent AI for ICU">
+        <div class="project-body">
+          <p class="project-supervisor">Supervisor: Tu Tran</p>
+          <h4>Transparent AI system for supporting ICU clinical decision-making</h4>
+          <p>Developing explainable machine learning tools that provide clear reasoning for clinical recommendations in intensive care settings.</p>
+          <a href="AvailableProjects.html" class="project-more">Read More →</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="assets/Minh_accet/AnimalModel.jpeg" alt="Animal model cardiac arrest study">
+        <div class="project-body">
+          <p class="project-supervisor">Supervisor: Douglas Crockett</p>
+          <h4>Animal model for heart and lung function during cardiac arrest</h4>
+          <p>Pre-clinical investigation of cardiorespiratory physiology to inform resuscitation protocols and post-cardiac arrest care.</p>
+          <a href="AvailableProjects.html" class="project-more">Read More →</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1">
+        <img src="assets/imgs/GH_CbuBWAAAGNon.jpeg" alt="Ventilator weaning neurocritical care">
+        <div class="project-body">
+          <p class="project-supervisor">Supervisor: Arun Joseph</p>
+          <h4>Ventilator weaning and extubation in Neurocritical Care</h4>
+          <p>Clinical research within the international VENOUS network — developing evidence-based protocols for safe extubation in neurocritical patients.</p>
+          <a href="AvailableProjects.html" class="project-more">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── News ────────────────────────────────────────────────────── -->
+<section id="news">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <p class="label">News &amp; Updates</p>
+      <h2 class="section-title">Latest From the Group</h2>
+    </div>
+
+    <div class="news-grid">
+      <div class="news-card reveal">
+        <img src="assets/Minh_accet/hospital.jpeg" alt="Stroke Care Collaboration" loading="lazy">
+        <p class="news-date">Oxford NDCN · 2023</p>
+        <h4>New Stroke Care Collaboration — Oxford, Bayer Vietnam &amp; HNSA</h4>
+        <p>A landmark MOU was signed between the University of Oxford, the Hanoi Stroke Association, and Bayer Vietnam to advance stroke care innovation in Southeast Asia.</p>
+        <a href="https://www.ndcn.ox.ac.uk/news/new-collaboration-between-university-of-oxford-the-hanoi-stroke-association-hnsa-and-bayer-vietnam-marked-with-ceremony" target="_blank" rel="noopener" class="news-read">Read More</a>
+      </div>
+
+      <div class="news-card reveal reveal-delay-1">
+        <img src="assets/Minh_accet/lung.jpeg" alt="Lung Modelling" loading="lazy">
+        <p class="news-date">Research Update · 2024</p>
+        <h4>Digital Lung Modelling to Guide ICU Ventilation Decisions</h4>
+        <p>A patient-specific digital model of the lung can help clinicians make better, more personalised ventilation decisions at the bedside — reducing lung injury risk.</p>
+        <a href="https://x.com/DMACC2023/status/1765345821594181839" target="_blank" rel="noopener" class="news-read">Read More</a>
+      </div>
+
+      <div class="news-card reveal reveal-delay-2">
+        <img src="assets/imgs/GH_CbuBWAAAGNon.jpeg" alt="Ventilator Weaning Network" loading="lazy">
+        <p class="news-date">NDCN · Oxford · 2023</p>
+        <h4>International Ventilator Weaning Network Launches</h4>
+        <p>The VENOUS network, led by Arun Joseph (Oxford), brings together neurocritical care units globally to standardise ventilator weaning practices in brain-injured patients.</p>
+        <a href="https://www.ndcn.ox.ac.uk/research/ventilator-weaning-and-extubation-in-neurocritical-care-network" target="_blank" rel="noopener" class="news-read">Read More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ─────────────────────────────────────────────────── -->
+<section id="contact" class="bg-alt">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="reveal">
+          <p class="label">Get In Touch</p>
+          <h2 class="section-title">Collaborate<br>With Us</h2>
+          <p class="section-subtitle" style="max-width:380px;">We welcome clinical collaborators, industry partners, and prospective students. Reach out to explore how we can work together.</p>
+        </div>
+
+        <div style="margin-top:2.5rem;">
+          <div class="contact-info-item reveal">
+            <div class="contact-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
             </div>
-        </div>
-    </section>
-    <!-- End of Blog Section -->
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="contact-card">
-                <div class="infos">
-                    <h6 class="section-subtitle">Get Here</h6>
-                    <h6 class="section-title mb-4">Contact Us</h6>
-
-                    <div class="item">
-                        <i class="ti-location-pin"></i>
-                        <div class="">
-                            <h5>Location</h5>
-                            <p> Level 6, West Wing, John Radcliff Hospital, Oxford, UK.</p>
-                        </div>                          
-                    </div>
-                    <div class="item">
-                        <i class="ti-mobile"></i>
-                        <div>
-                            <h5>Phone Number</h5>
-                            <p>(+44) ----7890</p>
-                        </div>                          
-                    </div>
-                    <div class="item">
-                        <i class="ti-email"></i>
-                        <div class="mb-0">
-                            <h5>Email Address</h5>
-                            <p>minh.tran@ndcn.ox.ac.uk</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <i class="ti-twitter"></i>
-                        <div class="mb-0">
-                            <h5>https://www.ndcn.ox.ac.uk/</h5>
-                            <p>https://x.com/DMACC2023</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="form">
-                    <h6 class="section-subtitle">Available 24/7</h6>
-                    <h6 class="section-title mb-4">Get In Touch</h6>
-                    <form>
-                        <div class="form-group">
-                            <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="contact-message" id="" cols="30" rows="7" class="form-control form-control-lg" placeholder="Message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-info btn-block btn-lg mt-3">Send Message</button>
-                    </form>
-                </div>
+            <div>
+              <p class="contact-info-label">Location</p>
+              <p class="contact-info-val">Level 6, West Wing, John Radcliffe Hospital, Oxford OX3 9DU, UK</p>
             </div>
+          </div>
+
+          <div class="contact-info-item reveal reveal-delay-1">
+            <div class="contact-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            </div>
+            <div>
+              <p class="contact-info-label">Email</p>
+              <p class="contact-info-val">minh.tran@ndcn.ox.ac.uk</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item reveal reveal-delay-2">
+            <div class="contact-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253M3 12c0 .778.099 1.533.284 2.253"/></svg>
+            </div>
+            <div>
+              <p class="contact-info-label">Oxford Profile</p>
+              <p class="contact-info-val"><a href="https://www.ndcn.ox.ac.uk/team/minh-tran" target="_blank" rel="noopener" style="color:var(--oxford);border-bottom:1px solid var(--gold);">ndcn.ox.ac.uk/team/minh-tran</a></p>
+            </div>
+          </div>
         </div>
-    </section>
-    <!-- Contact Section -->
+      </div>
 
-    <section class="has-bg-img py-0">
-        <div class="container">
-            <div class="footer">
-                <div class="footer-lists">
-                    <ul class="list">
-                        <li class="list-head">
-                            <h6 class="font-weight-bold">ABOUT US</h6>
-                        </li>
-                        <li class="list-body">
-                            <a href="https://vilam.pro/" class="logo">
-                                <img src="assets/imgs/logo.png" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Creative studio Landing page">
-                                <h6>Supported by Minh Tran</h6>
-                            </a>
-                            <p>Revolutionize healthcare by enabling more precise and personalized diagnosis and treatment.</p> 
-                            <p class="mt-3">
-                                Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a class="d-inline text-info" href="http://www.devcrud.com">DevCRUD</a>
-                            </p>                   
-                        </li>
-                    </ul>
-                    <ul class="list">
-                        <li class="list-head">
-                            <h6 class="font-weight-bold">USEFUL LINKS</h6>
-                        </li>
-                        <li class="list-body">
-                            <div class="row">
-                                <div class="col">
-                                    <a href="#about">About</a>
-                                    <a href="#service">Expertise</a>
-                                    <a href="#portfolio">Portfolio</a>
-                                    <a href="#testmonail">Testimonial</a>
-                                </div>
-                                <div class="col">
-                                    <a href="#team">Team</a>
-                                    <a href="#blog">Blog</a>
-                                    <a href="#">Faq</a>
-                                    <a href="#">Privacy Policy</a>                  
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="list">
-                        <li class="list-head">
-                            <h6 class="font-weight-bold">CONTACT INFO</h6>
-                        </li>
-                        <li class="list-body">
-                            <p>Contact us and we'll get back to you within 24 hours.</p>
-                            <p><i class="ti-location-pin"></i> Level 6, West Wing, John Radcliffe Hospital, Oxford OX3 9DU</p>
-                            <p><i class="ti-email"></i>  minh.tran@ndcn.ox.ac.uk</p>
-                            <div class="social-links">
-                                <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
-                                <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
-                                <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
-                                <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
-                                <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
-                                <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>    
-        </div>
-    </section>
+      <div class="reveal reveal-delay-1">
+        <form class="contact-form" action="mailto:minh.tran@ndcn.ox.ac.uk" method="GET">
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" name="name" placeholder="Your full name" required autocomplete="name">
 
-    <!-- core  -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+          <label for="contact-email">Email Address</label>
+          <input type="email" id="contact-email" name="email" placeholder="your@email.com" required autocomplete="email">
 
-    <!-- bootstrap affix -->
-    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+          <label for="contact-subject">Subject</label>
+          <input type="text" id="contact-subject" name="subject" placeholder="Research collaboration / Student enquiry / Other">
 
-    <!-- Creative Studio js -->
-    <script src="assets/js/creative-studio.js"></script>
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="body" placeholder="Tell us about your interest in collaborating or applying to the group..."></textarea>
+
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand-name">Minh Tran · DPhil (Oxon)</p>
+        <p class="label" style="color:var(--gold);margin-top:0.4rem;">Innovation for Noncommunicable Diseases</p>
+        <p class="footer-brand-desc">Nuffield Department of Clinical Neurosciences, University of Oxford. Advancing digital medicine and translational engineering for chronic and noncommunicable disease care.</p>
+      </div>
+
+      <div class="footer-col">
+        <h6>Navigation</h6>
+        <ul class="footer-links">
+          <li><a href="#about">About the Group</a></li>
+          <li><a href="#focus">Research Focus</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#projects">Student Projects</a></li>
+          <li><a href="#news">News</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h6>Connect</h6>
+        <ul class="footer-links">
+          <li><a href="https://www.ndcn.ox.ac.uk/team/minh-tran" target="_blank" rel="noopener">Oxford NDCN Profile</a></li>
+          <li><a href="https://scholar.google.com/citations?user=wANNZugAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><a href="https://www.linkedin.com/in/minh-tran-02701376/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://twitter.com/DMACC2023" target="_blank" rel="noopener">X / Twitter</a></li>
+          <li><a href="mailto:minh.tran@ndcn.ox.ac.uk">Email</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Minh Tran · University of Oxford · All rights reserved.</p>
+      <p>Nuffield Department of Clinical Neurosciences, John Radcliffe Hospital</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Scripts ─────────────────────────────────────────────────── -->
+<script>
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Navbar scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+// Mobile nav toggle
+const toggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+// Research focus tabs
+document.querySelectorAll('.focus-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const key = tab.dataset.tab;
+    document.querySelectorAll('.focus-tab').forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    document.querySelectorAll('.focus-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    document.getElementById('panel-' + key).classList.add('active');
+  });
+});
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => observer.observe(el));
+
+// Counter animation
+const counters = document.querySelectorAll('.hero-stat-num[data-count]');
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target;
+      const target = parseInt(el.dataset.count);
+      let current = 0;
+      const step = target / 40;
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = Math.round(current) + '+';
+        if (current >= target) clearInterval(timer);
+      }, 30);
+      counterObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+counters.forEach(c => counterObserver.observe(c));
+</script>
 
 </body>
 </html>
